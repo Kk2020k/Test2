@@ -27,12 +27,13 @@ msg_text ="""<b>‣ ʏᴏᴜʀ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ! 😎
 ‣ Fɪʟᴇ ꜱɪᴢᴇ : {}
 
 🔻 <a href="{}">𝗙𝗔𝗦𝗧 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗</a>
+
 🔺 <a href="{}">𝗪𝗔𝗧𝗖𝗛 𝗢𝗡𝗟𝗜𝗡𝗘</a>
 
 🚸 Nᴏᴛᴇ : LINK WON'T EXPIRE TILL I DELETE</b>
 
-‣  <a href="https://t.me/TamilMovies4K">ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ</a></b>
-‣  <a href="https://t.me/MoviesDiscussion24x7">ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ ɢʀᴏᴜᴘ</a></b>"""
+‣  <a href="https://t.me/TamilMovies4K">🎖 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 🎖</a></b>
+‣  <a href="https://t.me/MovieDiscussion24x7">🎥 ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ ɢʀᴏᴜᴘ 🎥</a></b>"""
 
 
 
