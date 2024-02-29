@@ -1,7 +1,10 @@
 #(c) Adarsh-Goel
 #(c) @biisal
 import os
+import requests
 import asyncio
+import string 
+import random 
 from asyncio import TimeoutError
 from biisal.bot import StreamBot
 from biisal.utils.database import Database
