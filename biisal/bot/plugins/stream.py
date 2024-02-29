@@ -35,6 +35,13 @@ msg_text ="""<b>‣ ʏᴏᴜʀ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ! 😎
 ‣  <a href="https://t.me/TamilMovies4K">🎖 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 🎖</a></b>
 ‣  <a href="https://t.me/MovieDiscussion24x7">🎥 ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ ɢʀᴏᴜᴘ 🎥</a></b>"""
 
+
+def generate_random_alphanumeric(): 
+    """Generate a random 8-letter alphanumeric string.""" 
+    characters = string.ascii_letters + string.digits 
+    random_chars = ''.join(random.choice(characters) for _ in range(8)) 
+    return random_chars 
+
 def get_shortlink(url): 
     rget = requests.get(f"https://{Var.SHORTLINK_URL}/api?api={Var.SHORTLINK_API}&url={url}&alias={generate_random_alphanumeric()}") 
     rjson = rget.json() 
