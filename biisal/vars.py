@@ -1,4 +1,4 @@
-# (c) adarsh-goel (c) @biisal
+# (c) adarsh-goel (c) @Useless07
 import os
 from os import getenv, environ
 from dotenv import load_dotenv
