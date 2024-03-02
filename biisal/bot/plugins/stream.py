@@ -39,19 +39,6 @@ msg_text ="""<b>‣ ʏᴏᴜʀ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ! 😎
 ‣  <a href="https://t.me/MovieDiscussion24x7">🎥 ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ ɢʀᴏᴜᴘ 🎥</a></b>"""
 
 
-def generate_random_alphanumeric(): 
-    """Generate a random 8-letter alphanumeric string.""" 
-    characters = string.ascii_letters + string.digits 
-    random_chars = ''.join(random.choice(characters) for _ in range(8)) 
-    return random_chars 
-
-def get_shortlink(url): 
-    rget = requests.get(f"https://{Var.SHORTLINK_URL}/api?api={Var.SHORTLINK_API}&url={url}&alias={generate_random_alphanumeric()}") 
-    rjson = rget.json() 
-    if rjson["status"] == "success" or rget.status_code == 200: 
-        return rjson["shortenedUrl"] 
-    else: 
-        return url 
 
 @StreamBot.on_message((filters.private) & (filters.document | filters.video | filters.audio | filters.photo) , group=4)
 async def private_receive_handler(c: Client, m: Message):
@@ -102,10 +89,6 @@ async def private_receive_handler(c: Client, m: Message):
         log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        tutorial = f"{Var.UPDATES_GROUP}"
-       # stream_link = get_shortlink(stream_links) 
-       # online_link = get_shortlink(online_links)
-
         await log_msg.reply_text(text=f"**RᴇQᴜᴇꜱᴛᴇᴅ ʙʏ :** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n**Uꜱᴇʀ ɪᴅ :** `{m.from_user.id}`\n**Stream ʟɪɴᴋ :** {stream_link}", disable_web_page_preview=True,  quote=True)
         await m.reply_text(
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
