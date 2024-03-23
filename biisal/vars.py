@@ -18,7 +18,7 @@ class Var(object):
     name = str(getenv('name', 'filetolink'))
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
     WORKERS = int(getenv('WORKERS', '4'))
-    BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-1002062053288'))
+    BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-1001675270280'))
     NEW_USER_LOG = int(getenv('NEW_USER_LOG', '-1002062053288'))
     PORT = int(getenv('PORT', '8000'))
     BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
@@ -40,7 +40,7 @@ class Var(object):
     else:
         URL = "https://simple-nat-etamilbooks.koyeb.app/".format(FQDN)
     DATABASE_URL = str(getenv('DATABASE_URL', 'mongodb+srv://sushankm16:4i1WAfPYKWyqPIDD@cluster0.sngp9pz.mongodb.net/?retryWrites=true&w=majority'))
-    UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 'TamilMovies4K')) 
+    UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 'TamilMovies5K')) 
     UPDATES_GROUP = str(getenv('UPDATES_GROUP', 'MovieDiscussion24x7')) 
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "")).split()))   
     BAN_CHNL = list(set(int(x) for x in str(getenv("BAN_CHNL", "")).split()))   
