@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 bot_name = "Fɪʟᴇ2Lɪɴᴋ Bᴏᴛ"
-bisal_channel = "https://telegram.me/TamilMovies4K"
+bisal_channel = "https://telegram.me/TamilMovies5K"
 bisal_grp = "https://t.me/MovieDiscussion24x7"
 
 class Var(object):
@@ -18,7 +18,7 @@ class Var(object):
     name = str(getenv('name', 'filetolink'))
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
     WORKERS = int(getenv('WORKERS', '4'))
-    BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-1001675270280'))
+    BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-1002062053288'))
     NEW_USER_LOG = int(getenv('NEW_USER_LOG', '-1002062053288'))
     PORT = int(getenv('PORT', '8000'))
     BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
