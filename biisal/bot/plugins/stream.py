@@ -35,7 +35,7 @@ msg_text ="""<b>‣ ʏᴏᴜʀ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ! 😎
 
 🚸 Nᴏᴛᴇ : LINK WON'T EXPIRE TILL I DELETE</b>
 
-‣  <a href="https://t.me/TamilMovies4K">🎖 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 🎖</a></b>
+‣  <a href="https://t.me/TamilMovies5K">🎖 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 🎖</a></b>
 ‣  <a href="https://t.me/MovieDiscussion24x7">🎥 ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ ɢʀᴏᴜᴘ 🎥</a></b>"""
 
 
@@ -54,7 +54,7 @@ async def private_receive_handler(c: Client, m: Message):
             if user.status == "kicked":
                 await c.send_message(
                     chat_id=m.chat.id,
-                    text="You are banned!\n\n  **Cᴏɴᴛᴀᴄᴛ Support [Support](https://t.me/bisal_files) They Wɪʟʟ Hᴇʟᴘ Yᴏᴜ**",
+                    text="You are banned!\n\n  **Cᴏɴᴛᴀᴄᴛ Support [Support](https://t.me/TamilSupport) They Wɪʟʟ Hᴇʟᴘ Yᴏᴜ**",
                     
                     disable_web_page_preview=True
                 )
@@ -126,7 +126,9 @@ async def channel_receive_handler(bot, broadcast):
                 [
                     [InlineKeyboardButton("sᴛʀᴇᴀᴍ 🔺", url=stream_link),
                     InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ 🔻', url=online_link)] 
-                ]
+                ],[
+                      InlineKeyboardButton("🦋 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", url="t.me/TownBus")
+                     ]
             )
         )
     except FloodWait as w:
