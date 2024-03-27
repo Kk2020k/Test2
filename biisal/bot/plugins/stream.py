@@ -127,7 +127,7 @@ async def channel_receive_handler(bot, broadcast):
                     InlineKeyboardButton("sᴛʀᴇᴀᴍ 🔺", url=stream_link),
                     InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ 🔻', url=online_link) 
                 ],[
-                      InlineKeyboardButton("🦋 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", url="t.me/TownBus")
+                      InlineKeyboardButton("⭐ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", url="t.me/TownBus")
                      ]
                 ]
             )
