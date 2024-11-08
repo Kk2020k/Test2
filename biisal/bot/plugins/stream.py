@@ -14,8 +14,8 @@ from urllib.parse import quote_plus
 from pyrogram import filters, Client
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-#from utils_bot import get_shortlink
-from pyshorteners import Shortener
+from utils_bot import get_shortlink
+
 
 from biisal.utils.file_properties import get_name, get_hash, get_media_file_size
 db = Database(Var.DATABASE_URL, Var.name)
@@ -40,14 +40,6 @@ msg_text ="""<b>‣ ʏᴏᴜʀ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ! 😎
 ‣  <a href="https://t.me/TamilMovies5K">🎖 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 🎖</a></b>
 ‣  <a href="https://t.me/MovieDiscussion24x7">🎥 ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ ɢʀᴏᴜᴘ 🎥</a></b>"""
 
-def get_shortlink(url):
-   shortlink = False 
-   try:
-      shortlink = Shortener().dagd.short(url)
-   except Exception as err:
-       print(err)
-       pass
-   return shortlink
 
 @StreamBot.on_message((filters.private) & (filters.document | filters.video | filters.audio | filters.photo) , group=4)
 async def private_receive_handler(c: Client, m: Message):
@@ -97,7 +89,7 @@ async def private_receive_handler(c: Client, m: Message):
     try:
         log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        stream_short = f"https://tnshort.net?api={Var.API}&url={stream_link}"
+        stream_short = get_shortlink(stream_link)
        
     #    online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_link = f"https://tnshort.net?api={Var.API}&url={Var.URL}{str(log_msg.message_id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
@@ -108,8 +100,8 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("sᴛʀᴇᴀᴍ 🔺", url=stream_link), #Stream Link
-                                               InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ 🔻', url=online_link)]]) #Download Link
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("sᴛʀᴇᴀᴍ 🔺", url=stream_short), #Stream Link
+                                               InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ 🔻', url=online_short)]]) #Download Link
         )
     except FloodWait as e:
         print(f"Sleeping for {str(e.x)}s")
