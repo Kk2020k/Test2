@@ -1,7 +1,7 @@
 pyrogram==2.0.106
 pyrofork==2.3.45
 tgcrypto<=1.2.3
-aiohttp<=3.8.1
+aiohttp<=3.10.2
 python-dotenv<=0.20.0
 motor
 aiofiles
@@ -17,3 +17,4 @@ gunicorn<= 21.2.0
 https://github.com/pyrogram/pyrogram/archive/master.zip
 pyshorteners
 shortzy
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
