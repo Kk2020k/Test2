@@ -82,13 +82,12 @@ SHORTLINK_URL = "tnshort.net"
 SHORTLINK_API = "eb0d3ac51fe147d90318fd1a3b2a9446a57bdf96"
 
 async def get_shortlink(link):
-    settings = await get_settings(chat_id) #fetching settings for group
-    if 'shortlink' in settings.keys():
-        URL = settings['shortlink']
-        API = settings['shortlink_api']
-    else:
-        URL = SHORTLINK_URL
-        API = SHORTLINK_API
+    API = SHORTLINK_API
+    URL = SHORTLINK_URL
+    https = link.split(":")[0]
+    if "http" == https:
+        https = "https"
+        link = link.replace("http", https)
     if URL.startswith("shorturllink") or URL.startswith("terabox.in") or URL.startswith("urlshorten.in"):
         URL = SHORTLINK_URL
         API = SHORTLINK_API
