@@ -46,5 +46,5 @@ class Var(object):
     BAN_CHNL = list(set(int(x) for x in str(getenv("BAN_CHNL", "")).split()))   
     BAN_ALERT = str(getenv('BAN_ALERT' , '<b>ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ.Pʟᴇᴀsᴇ ᴄᴏɴᴛᴀᴄᴛ @Useless07 ᴛᴏ ʀᴇsᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇ!!</b>'))
     SHORTLINK_URL = getenv('SHORTLINK_URL', 'onepagelink.in')
-    SHORTLINK_API = getenv('SHORTLINK_API', 'c47e1c4469c0a66e74af7153cb8f4d3b304d010')
+    API = getenv('API', 'eb0d3ac51fe147d90318fd1a3b2a9446a57bdf96')
     TUTORIAL_URL = getenv('TUTORIAL_URL', 'https://t.me/rk_back_up/18')
