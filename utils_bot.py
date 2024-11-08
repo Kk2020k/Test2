@@ -4,6 +4,7 @@ import threading
 import time
 from asyncio import TimeoutError
 from pyrogram import filters
+from shortzy import Shortzy
 
 LOGGER = logging.getLogger(__name__)
 SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
@@ -80,26 +81,32 @@ def readable_time(seconds: int) -> str:
 URL_SHORTENR_WEBSITE = "tnshort.net" 
 URL_SHORTNER_WEBSITE_API = "eb0d3ac51fe147d90318fd1a3b2a9446a57bdf96"
 
-async def get_shortlink(link): 
-     https = link.split(":")[0] 
-     if "http" == https: 
-         https = "https" 
-         link = link.replace("http", https) 
-     url = f'https://{URL_SHORTENR_WEBSITE}/api' 
-     params = {'api': URL_SHORTNER_WEBSITE_API, 
-               'url': link, 
-               } 
-
-     try: 
-         async with aiohttp.ClientSession() as session: 
-             async with session.get(url, params=params, raise_for_status=True, ssl=False) as response: 
-                 data = await response.json() 
-                 if data["status"] == "success": 
-                     return data['shortenedUrl'] 
-                 else: 
-                     logger.error(f"Error: {data['message']}") 
-                     return f'https://{URL_SHORTENR_WEBSITE}/api?api={URL_SHORTNER_WEBSITE_API}&link={link}' 
-
-     except Exception as e: 
-         logger.error(e) 
-         return f'{URL_SHORTENR_WEBSITE}/api?api={URL_SHORTNER_WEBSITE_API}&link={link}'
+async def get_shortlink(chat_id, link):
+    settings = await get_settings(chat_id) #fetching settings for group
+    if 'shortlink' in settings.keys():
+        URL = settings['shortlink']
+        API = settings['shortlink_api']
+    else:
+        URL = SHORTLINK_URL
+        API = SHORTLINK_API
+    if URL.startswith("shorturllink") or URL.startswith("terabox.in") or URL.startswith("urlshorten.in"):
+        URL = SHORTLINK_URL
+        API = SHORTLINK_API
+    if URL == "api.shareus.io":
+        url = f'https://{URL}/easy_api'
+        params = {
+            "key": API,
+            "link": link,
+        }
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, params=params, raise_for_status=True, ssl=False) as response:
+                    data = await response.text()
+                    return data
+        except Exception as e:
+            logger.error(e)
+            return link
+    else:
+        shortzy = Shortzy(api_key=API, base_site=URL)
+        link = await shortzy.convert(link)
+        return link
