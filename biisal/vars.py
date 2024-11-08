@@ -36,9 +36,9 @@ class Var(object):
     FQDN = str(getenv('FQDN', 'BIND_ADRESS:PORT')) if not ON_HEROKU or getenv('FQDN', '') else APP_NAME+'.herokuapp.com'
     HAS_SSL=bool(getenv('HAS_SSL',True))
     if HAS_SSL:
-        URL = "https://simple-nat-etamilbooks.koyeb.app/".format(FQDN)
+        URL = "https://tamilbots.koyeb.app/".format(FQDN)
     else:
-        URL = "https://simple-nat-etamilbooks.koyeb.app/".format(FQDN)
+        URL = "https://tamilbots.koyeb.app/".format(FQDN)
     DATABASE_URL = str(getenv('DATABASE_URL', 'mongodb+srv://sushankm16:4i1WAfPYKWyqPIDD@cluster0.sngp9pz.mongodb.net/?retryWrites=true&w=majority'))
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 'TamilMovies5K')) 
     UPDATES_GROUP = str(getenv('UPDATES_GROUP', 'MovieDiscussion24x7')) 
