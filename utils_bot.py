@@ -81,7 +81,7 @@ def readable_time(seconds: int) -> str:
 SHORTLINK_URL = "tnshort.net" 
 SHORTLINK_API = "eb0d3ac51fe147d90318fd1a3b2a9446a57bdf96"
 
-async def get_shortlink(chat_id, link):
+async def get_shortlink(link):
     settings = await get_settings(chat_id) #fetching settings for group
     if 'shortlink' in settings.keys():
         URL = settings['shortlink']
