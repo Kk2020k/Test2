@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-bot_name = "Fɪʟᴇ2Lɪɴᴋ Bᴏᴛ"
+bot_name = "TamilFɪʟᴇ2Lɪɴᴋ Bᴏᴛ"
 bisal_channel = "https://telegram.me/TamilMovies5K"
 bisal_grp = "https://t.me/MovieDiscussion24x7"
 
@@ -23,10 +23,10 @@ class Var(object):
     PORT = int(getenv('PORT', '8000'))
     BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
     PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
-    OWNER_ID = [int(x) for x in os.environ.get("OWNER_ID", "1169076058").split()]
+    OWNER_ID = [int(x) for x in os.environ.get("OWNER_ID", "2063915639").split()]
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = None
-    OWNER_USERNAME = str(getenv('OWNER_USERNAME', 'useless07'))
+    OWNER_USERNAME = str(getenv('OWNER_USERNAME', 'Yaarulanee'))
     if 'DYNO' in environ:
         ON_HEROKU = True
         APP_NAME = str(getenv('APP_NAME')) #dont need to fill anything here
@@ -45,6 +45,6 @@ class Var(object):
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "")).split()))   
     BAN_CHNL = list(set(int(x) for x in str(getenv("BAN_CHNL", "")).split()))   
     BAN_ALERT = str(getenv('BAN_ALERT' , '<b>ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ.Pʟᴇᴀsᴇ ᴄᴏɴᴛᴀᴄᴛ @Useless07 ᴛᴏ ʀᴇsᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇ!!</b>'))
-    SHORTLINK_URL = getenv('SHORTLINK_URL', 'onepagelink.in')
-    API = getenv('API', 'eb0d3ac51fe147d90318fd1a3b2a9446a57bdf96')
+    SHORTLINK_URL = getenv('SHORTLINK_URL', 'tnshort.net')
+    SHORTLINK_API = getenv('SHORTLINK_API', 'eb0d3ac51fe147d90318fd1a3b2a9446a57bdf96')
     TUTORIAL_URL = getenv('TUTORIAL_URL', 'https://t.me/rk_back_up/18')
