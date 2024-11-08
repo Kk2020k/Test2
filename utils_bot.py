@@ -96,7 +96,7 @@ async def get_shortlink(link):
         url = f'https://{URL}/easy_api'
         params = {
             "key": API,
-            "link": link,
+            "url": link,
         }
         try:
             async with aiohttp.ClientSession() as session:
