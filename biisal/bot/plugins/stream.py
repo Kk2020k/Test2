@@ -123,7 +123,7 @@ async def channel_receive_handler(bot, broadcast):
         stream_short = f"https://tnshort.net?api={Var.SHORTLINK_API}&url={stream_link}"
        
     #    online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        online_link = f"https://tnshort.net?api={Var.SHORTLINK_API}&url={Var.URL}{str(log_msg.message_id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+        online_link = f"https://tnshort.net?api={Var.SHORTLINK_API}&url={Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_short = get_shortlink(online_link)
        
         await log_msg.reply_text(
