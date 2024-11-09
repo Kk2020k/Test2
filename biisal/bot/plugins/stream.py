@@ -118,14 +118,14 @@ async def channel_receive_handler(bot, broadcast):
         await bot.leave_chat(broadcast.chat.id)
         return
     try:
-        log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
+        log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        stream_short = f"https://tnshort.net?api={Var.SHORTLINK_API}&url={stream_link}"
+        a = await get_shortlink(stream_link)
        
-    #    online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        online_link = f"https://tnshort.net?api={Var.SHORTLINK_API}&url={Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        online_short = get_shortlink(online_link)
-       
+        online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+    #    online_link = f"https://tnshort.net?api={Var.API}&url={Var.URL}{str(log_msg.message_id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+        x = await get_shortlink(online_link)
+      
         await log_msg.reply_text(
             text=f"**Channel Name:** `{broadcast.chat.title}`\n**CHANNEL ID:** `{broadcast.chat.id}`\n**Rᴇǫᴜᴇsᴛ ᴜʀʟ:** {stream_link}",
             quote=True
@@ -135,8 +135,8 @@ async def channel_receive_handler(bot, broadcast):
             message_id=broadcast.id,
             reply_markup=InlineKeyboardMarkup(
                 [[
-                    InlineKeyboardButton("sᴛʀᴇᴀᴍ 🔺", url=stream_short),
-                    InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ 🔻', url=online_short) 
+                    InlineKeyboardButton("sᴛʀᴇᴀᴍ 🔺", url=a),
+                    InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ 🔻', url=x) 
                 ],[
                       InlineKeyboardButton("⭐ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", url="t.me/TownBus")
                      ]
