@@ -35,11 +35,7 @@ msg_text ="""<b>‣ ʏᴏᴜʀ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ! 😎
 
 🔺 <a href="{}">𝗪𝗔𝗧𝗖𝗛 𝗢𝗡𝗟𝗜𝗡𝗘</a>
 
-🚸 Nᴏᴛᴇ : LINK WON'T EXPIRE TILL I DELETE</b>
-
-‣  <a href="https://t.me/TamilMovies5K">🎖 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 🎖</a></b>
-
-‣  <a href="https://t.me/MovieDiscussion24x7">🎥 ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ ɢʀᴏᴜᴘ 🎥</a></b>"""
+🚸 Nᴏᴛᴇ : LINK WON'T EXPIRE TILL I DELETE</b>"""
 
 
 @StreamBot.on_message((filters.private) & (filters.document | filters.video | filters.audio | filters.photo) , group=4)
@@ -153,4 +149,5 @@ async def channel_receive_handler(bot, broadcast):
     except Exception as e:
         await bot.send_message(chat_id=Var.BIN_CHANNEL, text=f"**#ERROR_TRACKEBACK:** `{e}`", disable_web_page_preview=True)
         print(f"Cᴀɴ'ᴛ Eᴅɪᴛ Bʀᴏᴀᴅᴄᴀsᴛ Mᴇssᴀɢᴇ!\nEʀʀᴏʀ:  **Give me edit permission in updates and bin Channel!{e}**")
+
 
